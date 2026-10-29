@@ -66,10 +66,11 @@ jobs:
           npm ci
           npm run build
 
-      - name: Configure AWS credentials via OIDC
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::006392691312:role/GitHubActionsOIDCRole
+          aws-access-key-id: AKIAQC7IIXJYJJL64FCI
+          aws-secret-access-key: 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
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to Amazon ECR
